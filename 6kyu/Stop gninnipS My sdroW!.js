@@ -7,3 +7,18 @@
 // spinWords( "This is a test") => returns "This is a test" 
 // spinWords( "This is another test" )=> returns "This is rehtona test"
 // STRINGSALGORITHMS
+
+function spinWords(string) {
+  if (/\s/g.test(string)) {
+    return string
+      .split(" ")
+      .map((stringEl) => {
+        if (stringEl.length >= 5) {
+          return [...stringEl].reverse().join("");
+        }
+        return stringEl;
+      })
+      .join(" ");
+  }
+  return [...string].reverse().join("");
+}
